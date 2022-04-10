@@ -4,17 +4,18 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.timplifier.newsapp.data.remote.dtos.Article
+import com.timplifier.newsapp.data.remote.dtos.ArticleDto
 
 @Dao
 interface ArticleDao {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCharacters(vararg: Article)
+    suspend fun insertArticles(vararg articles: ArticleDto)
 
 
-    @Query("SELECT * FROM article")
-    suspend fun getArticles(): List<Article>
+    @Query("SELECT * FROM ArticleDto")
+    suspend fun getArticles(): List<ArticleDto>
+
 
 }

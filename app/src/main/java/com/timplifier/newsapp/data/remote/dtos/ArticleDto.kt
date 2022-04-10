@@ -2,12 +2,15 @@ package com.timplifier.newsapp.data.remote.dtos
 
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity
-data class Article(
-    @SerializedName("source")
-    val source: Source,
+data class ArticleDto(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int?,
+    @SerializedName("sourceDto")
+    val sourceDto: SourceDto,
     @SerializedName("author")
     val author: String,
     @SerializedName("title")
@@ -23,3 +26,4 @@ data class Article(
     @SerializedName("content")
     val content: String
 )
+

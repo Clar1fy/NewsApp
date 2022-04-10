@@ -3,11 +3,11 @@ package com.timplifier.newsapp.presentation.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.timplifier.newsapp.data.remote.dtos.Article
+import com.timplifier.newsapp.data.remote.dtos.ArticleDto
 import com.timplifier.newsapp.databinding.ItemNewsBinding
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
-    private var list: List<Article> = ArrayList()
+    private var list: List<ArticleDto> = ArrayList()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
@@ -24,7 +24,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         holder.onBind(list[position])
     }
 
-    fun setList(list: List<Article>) {
+    fun setList(list: List<ArticleDto>) {
 
         this.list = list
     }
@@ -34,7 +34,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     inner class NewsViewHolder(private val binding: ItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(article: Article) {
+        fun onBind(articleDto: ArticleDto) {
             binding.apply {
 
             }
