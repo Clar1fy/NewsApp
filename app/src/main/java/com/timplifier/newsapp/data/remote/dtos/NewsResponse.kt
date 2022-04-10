@@ -1,8 +1,13 @@
 package com.timplifier.newsapp.data.remote.dtos
 
-data class NewsResponse<T>(
-    val status: String,
-    val totalResults: String,
-    val articles: List<T>
-)
 
+import com.google.gson.annotations.SerializedName
+
+data class NewsResponse(
+    @SerializedName("status")
+    val status: String,
+    @SerializedName("totalResults")
+    val totalResults: Int,
+    @SerializedName("articles")
+    val articles: List<Article>
+)
