@@ -99,4 +99,7 @@ dependencies {
     implementation(Dependencies.Room.runtime)
     implementation(Dependencies.Room.supportKotlinExtensionsAndCoroutines)
     kapt(Dependencies.Room.compiler)
+
+    // Paging3
+    implementation(Dependencies.Paging.runtime)
 }
