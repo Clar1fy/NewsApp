@@ -1,8 +1,10 @@
 package com.timplifier.newsapp.data.remote.dtos
 
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class Article(
     @SerializedName("source")
     val source: Source,
