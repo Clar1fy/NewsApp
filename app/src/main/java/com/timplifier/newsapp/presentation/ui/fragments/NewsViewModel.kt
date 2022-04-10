@@ -1,4 +1,4 @@
-package com.timplifier.newsapp.presentation.fragments
+package com.timplifier.newsapp.presentation.ui.fragments
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

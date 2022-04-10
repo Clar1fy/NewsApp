@@ -1,4 +1,4 @@
-package com.timplifier.newsapp.presentation.adapters
+package com.timplifier.newsapp.presentation.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

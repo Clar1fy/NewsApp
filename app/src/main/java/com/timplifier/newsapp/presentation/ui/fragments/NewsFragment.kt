@@ -1,11 +1,11 @@
-package com.timplifier.newsapp.presentation.fragments
+package com.timplifier.newsapp.presentation.ui.fragments
 
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.timplifier.newsapp.R
 import com.timplifier.newsapp.base.BaseFragment
 import com.timplifier.newsapp.databinding.FragmentNewsBinding
-import com.timplifier.newsapp.presentation.adapters.NewsAdapter
+import com.timplifier.newsapp.presentation.ui.adapters.NewsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
