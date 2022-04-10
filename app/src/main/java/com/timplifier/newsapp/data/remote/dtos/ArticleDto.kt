@@ -4,6 +4,7 @@ package com.timplifier.newsapp.data.remote.dtos
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.timplifier.newsapp.base.BaseDiffModel
 
 @Entity
 data class ArticleDto(
@@ -18,12 +19,12 @@ data class ArticleDto(
     @SerializedName("description")
     val description: String,
     @SerializedName("url")
-    val url: String,
+    override val url: String,
     @SerializedName("urlToImage")
     val urlToImage: String,
     @SerializedName("publishedAt")
     val publishedAt: String,
     @SerializedName("content")
     val content: String
-)
+) : BaseDiffModel
 

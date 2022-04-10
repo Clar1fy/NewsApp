@@ -2,12 +2,15 @@ package com.timplifier.newsapp.presentation.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.timplifier.newsapp.base.BaseDiffUtil
 import com.timplifier.newsapp.data.remote.dtos.ArticleDto
 import com.timplifier.newsapp.databinding.ItemNewsBinding
 
-class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
-    private var list: List<ArticleDto> = ArrayList()
+class NewsAdapter(
+    private val onItemClick: (description: String) -> Unit
+) : ListAdapter<ArticleDto, NewsAdapter.NewsViewHolder>(BaseDiffUtil()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
@@ -20,16 +23,10 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         )
     }
 
+
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        holder.onBind(list[position])
+        getItem(position).let { holder.onBind(it) }
     }
-
-    fun setList(list: List<ArticleDto>) {
-
-        this.list = list
-    }
-
-    override fun getItemCount(): Int = list.size
 
 
     inner class NewsViewHolder(private val binding: ItemNewsBinding) :
@@ -37,6 +34,9 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         fun onBind(articleDto: ArticleDto) {
             binding.apply {
 
+                root.setOnClickListener {
+                    onItemClick(articleDto.description)
+                }
             }
 
 
