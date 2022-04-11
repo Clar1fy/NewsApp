@@ -1,4 +1,4 @@
-package com.timplifier.newsapp.presentation.ui.fragments
+package com.timplifier.newsapp.presentation.ui.fragments.news.breaking
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope

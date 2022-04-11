@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/breakingNewsFragment"
-        android:name="com.timplifier.newsapp.presentation.ui.fragments.BreakingNewsFragment"
+        android:name="com.timplifier.newsapp.presentation.ui.fragments.news.breaking.BreakingNewsFragment"
         android:label="fragment_breaking_news"
         tools:layout="@layout/fragment_breaking_news" />
 </navigation>
