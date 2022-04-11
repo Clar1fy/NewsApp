@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/newsFragment">
+    app:startDestination="@id/breakingNewsFragment">
+
 
     <fragment
-        android:id="@+id/newsFragment"
-        android:name="com.timplifier.newsapp.presentation.ui.fragments.NewsFragment"
-        android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        android:id="@+id/breakingNewsFragment"
+        android:name="com.timplifier.newsapp.presentation.ui.fragments.BreakingNewsFragment"
+        android:label="fragment_breaking_news"
+        tools:layout="@layout/fragment_breaking_news" />
 </navigation>

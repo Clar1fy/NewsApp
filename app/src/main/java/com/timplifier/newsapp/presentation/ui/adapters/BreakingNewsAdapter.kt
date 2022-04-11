@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.timplifier.newsapp.base.BaseDiffUtil
+import com.timplifier.newsapp.common.extensions.requestImage
 import com.timplifier.newsapp.data.remote.dtos.ArticleDto
 import com.timplifier.newsapp.databinding.ItemNewsBinding
 
-class NewsAdapter(
-    private val onItemClick: (description: String) -> Unit
-) : ListAdapter<ArticleDto, NewsAdapter.NewsViewHolder>(BaseDiffUtil()) {
+class BreakingNewsAdapter(
+    private val onItemClick: (url: String) -> Unit
+) : ListAdapter<ArticleDto, BreakingNewsAdapter.NewsViewHolder>(BaseDiffUtil()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
@@ -33,9 +34,14 @@ class NewsAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(articleDto: ArticleDto) {
             binding.apply {
+                imNews.requestImage(articleDto.urlToImage)
+                tvTitle.text = articleDto.title
+                tvDescription.text = articleDto.description
+                tvAuthor.text = articleDto.author
+                tvPublicationDate.text = articleDto.publishedAt
 
                 root.setOnClickListener {
-                    onItemClick(articleDto.description)
+                    onItemClick(articleDto.url)
                 }
             }
 

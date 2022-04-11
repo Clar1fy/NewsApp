@@ -39,6 +39,7 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="75dp"
+        app:menu="bottom_navigation_menu"
         app:layout_anchor="@id/nav_host_fragment"
         app:layout_anchorGravity="bottom"
         app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior" />
