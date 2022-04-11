@@ -6,9 +6,9 @@ import android.net.NetworkCapabilities
 import androidx.fragment.app.Fragment
 
 
-fun Fragment.isInternetAvailable(context: Context): Boolean {
+fun Fragment.isInternetAvailable(context: Context?): Boolean {
     val connectivityManager =
-        context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     if (connectivityManager != null) {
         val capabilities =
             connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
